@@ -1,0 +1,182 @@
+---
+import Base from "../layouts/Base.astro";
+
+const title = "Aivora Labs";
+const description =
+  "Aivora Labs is an AI lab. We build products for everyday use. Animaay turns a manga chapter into an anime video. Email the lab at info@aivoralabs.si.";
+
+const products = [
+  {
+    theme: "animaay",
+    name: "Animaay",
+    href: "https://animaay.com",
+    cta: "See Animaay",
+    body: "Turn a manga chapter into an anime video. Drop a PDF, a CBZ, or page images. Animaay redraws each panel you keep in color and animates it with voices, music, and sound. You check every step, then download one film.",
+  },
+];
+
+const holds = [
+  {
+    title: "One job, then done.",
+    body: "Each product does one thing a person already wanted finished. You can tell what it is from the first sentence, and you leave with that thing done.",
+  },
+  {
+    title: "You stay in charge.",
+    body: "The product prepares the work, then waits. You can see it, change what is wrong, and decide when it is finished.",
+  },
+  {
+    title: "The price comes first.",
+    body: "You see the cost before the work starts. If a piece cannot be made, you are not charged for it.",
+  },
+];
+
+const steps = [
+  {
+    title: "Read the pages",
+    body: "A PDF, a CBZ, or page images. Animaay finds the panels and sets covers, credits, and ads aside unless you want them in the film.",
+  },
+  {
+    title: "Redraw each panel",
+    body: "Every panel you keep comes back in color, with the same characters throughout. Redo a frame, or fix a spoken line, before it moves.",
+  },
+  {
+    title: "Animate with sound",
+    body: "Voices, music, and sound are made with the picture. The clip is not dubbed on afterwards.",
+  },
+  {
+    title: "Download one film",
+    body: "One MP4, with subtitles. You can go back and change a clip without starting the chapter over.",
+  },
+];
+---
+
+<Base title={title} description={description}>
+  <a class="skip" href="#lab">Skip to the lab</a>
+
+  <header class="hero">
+    <div class="wrap nav">
+      <a class="mark" href="/">Aivora Labs</a>
+      <ul class="nav-links">
+        <li><a href="#lab">The lab</a></li>
+        <li><a href="#products">Products</a></li>
+      </ul>
+    </div>
+    <div class="wrap hero-copy">
+      <h1>AI products for everyday use.</h1>
+      <p class="lede">
+        Aivora Labs builds them.
+      </p>
+      <div class="actions">
+        <a class="button" href="#products">See the products</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="band" id="lab" aria-labelledby="lab-title">
+      <div class="wrap split">
+        <h2 class="section-title" id="lab-title">Finish the job you already have.</h2>
+        <div class="prose">
+          <p>
+            Aivora Labs is an AI lab. The products are for everyday use: a person with a real piece of work, who wants that work finished.
+          </p>
+          <p>
+            You should know what a product does from the first sentence. You should be able to watch it work, change what is wrong, and leave with the result. There is no platform to set up and no workflow to adopt.
+          </p>
+        </div>
+      </div>
+      <div class="wrap">
+        <ul class="holds">
+          {
+            holds.map((item) => (
+              <li>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+    {
+      products.map((product) => (
+        <section class="product" id="products" data-theme={product.theme} aria-labelledby={`${product.theme}-title`}>
+          <div class="wrap product-grid">
+            <div>
+              <h2 class="product-name" id={`${product.theme}-title`}>
+                {product.name}
+              </h2>
+              <p class="product-copy">{product.body}</p>
+              <div class="actions">
+                <a class="button" href={product.href}>
+                  {product.cta}
+                </a>
+              </div>
+            </div>
+            {product.theme === "animaay" ? (
+              <svg class="panel" viewBox="0 0 680 400" role="img" aria-labelledby="panel-title">
+                <title id="panel-title">A manga panel halfway to color, the picture Animaay starts from.</title>
+                <rect x="8" y="8" width="664" height="384" rx="12" fill="var(--paper)" />
+                <rect class="wash" x="340" y="8" width="332" height="384" fill="var(--bg)" />
+                <g fill="var(--animaay-ink)">
+                  <circle cx="64" cy="48" r="4" />
+                  <circle cx="82" cy="48" r="3.2" />
+                  <circle cx="100" cy="48" r="2.4" />
+                  <circle cx="64" cy="66" r="3.2" />
+                  <circle cx="82" cy="66" r="2.4" />
+                  <circle cx="64" cy="84" r="2.4" />
+                  <circle cx="176" cy="132" r="30" />
+                  <path d="M128 176h96l26 36v18l-34-10 12 118h-28l-10-76h-20l-10 76h-28l12-118-34 10v-18z" />
+                </g>
+                <rect x="214" y="228" width="78" height="52" rx="3" fill="var(--paper)" stroke="var(--animaay-ink)" stroke-width="3" transform="rotate(-7 253 254)" />
+                <g fill="var(--paper)">
+                  <path d="M400 72h112a14 14 0 0 1 14 14v36a14 14 0 0 1-14 14h-36l-16 16v-16h-60a14 14 0 0 1-14-14v-36a14 14 0 0 1 14-14z" />
+                  <circle cx="508" cy="176" r="26" />
+                  <path d="M466 214h84l22 30v16l-30-8 10 96h-24l-8-62h-20l-8 62h-24l10-96-30 8v-16z" />
+                </g>
+                <g fill="var(--bg)">
+                  <rect x="422" y="90" width="54" height="4" rx="2" />
+                  <rect x="422" y="102" width="36" height="4" rx="2" />
+                </g>
+                <rect x="8" y="8" width="664" height="384" rx="12" fill="none" stroke="var(--animaay-ink)" stroke-width="3" />
+                <path d="M340 8v384" stroke="var(--animaay)" stroke-width="3" />
+              </svg>
+            ) : null}
+          </div>
+          <div class="wrap">
+            <ol class="steps">
+              {
+                steps.map((step, index) => (
+                  <li>
+                    <span class="num">{index + 1}</span>
+                    <div>
+                      <h3>{step.title}</h3>
+                      <p>{step.body}</p>
+                    </div>
+                  </li>
+                ))
+              }
+            </ol>
+            <p class="product-copy">
+              If you have the characters and not the pages, Animaay can start from up to four pictures and a short description instead.
+            </p>
+          </div>
+        </section>
+      ))
+    }
+
+    <section class="contact" aria-labelledby="contact-title">
+      <div class="wrap">
+        <h2 id="contact-title">Write to the lab.</h2>
+        <a class="email" href="mailto:info@aivoralabs.si">info@<wbr />aivoralabs.si</a>
+        <p>This is the only address. It reaches Aivora Labs.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-row">
+      <p>© {new Date().getFullYear()} Aivora Labs LLC</p>
+    </div>
+  </footer>
+</Base>

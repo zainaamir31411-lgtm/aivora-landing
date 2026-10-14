@@ -1,0 +1,15 @@
+{
+  "name": "aivora-landing",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.2.8",
+    "@fontsource/dela-gothic-one": "^5.3.0",
+    "astro": "^5.14.1"
+  }
+}
